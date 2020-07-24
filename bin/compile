@@ -28,7 +28,7 @@ mkdir -p $BIN_DIR
 if [ -f $ENV_DIR/CHROMEDRIVER_VERSION ]; then
   VERSION=$(cat $ENV_DIR/CHROMEDRIVER_VERSION)
 
-  if [ "$VERSION" = "stable" ]
+  if [ "$VERSION" = "stable" ]; then
     MAJOR_VERSION=`google-chrome --version | grep -o -E '[0-9]+' | head -1`
     topic "Looking up latest stable chromedriver version"
     LATEST="https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$MAJOR_VERSION"
